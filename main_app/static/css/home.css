@@ -1,0 +1,130 @@
+main {
+  max-width: none;
+  padding: 0;
+  background: #020707;
+  min-height: calc(100vh - 92px);
+  font-family: "Courier New", monospace;
+}
+
+.home-page {
+  min-height: calc(100vh - 92px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+}
+
+.home-card {
+  width: min(760px, 94vw);
+  padding: 58px 52px;
+  border: 1px solid rgba(27, 233, 164, 0.65);
+  background: rgba(0, 5, 6, 0.92);
+  text-align: center;
+  box-shadow:
+    0 0 28px rgba(27, 233, 164, 0.32),
+    inset 0 0 24px rgba(27, 233, 164, 0.08);
+}
+
+.home-logo-wrap {
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 30px;
+  border: 1px solid rgba(27, 233, 164, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 0 24px rgba(27, 233, 164, 0.28),
+    inset 0 0 18px rgba(27, 233, 164, 0.08);
+}
+
+.home-logo {
+  max-width: 72%;
+  max-height: 72%;
+  object-fit: contain;
+}
+
+.home-title {
+  margin: 0 0 14px;
+  color: #1be9a4;
+  font-size: 4.2rem;
+  font-weight: 400;
+  letter-spacing: 0.42em;
+  text-indent: 0.42em;
+  text-transform: uppercase;
+  text-shadow: 0 0 18px rgba(27, 233, 164, 0.85);
+}
+
+.home-subtitle {
+  margin: 0 0 42px;
+  color: #82a8e0;
+  font-size: 1.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.home-actions {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.home-btn {
+  min-width: 210px;
+  padding: 18px 30px;
+  text-decoration: none;
+  font-size: 1.9rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  border: 1px solid;
+  background: transparent;
+  font-family: "Courier New", monospace;
+  transition: 0.2s ease;
+}
+
+.home-btn.primary {
+  color: #1be9a4;
+  border-color: #1be9a4;
+  box-shadow:
+    0 0 18px rgba(27, 233, 164, 0.35),
+    inset 0 0 12px rgba(27, 233, 164, 0.08);
+}
+
+.home-btn.secondary {
+  color: #d8c7ff;
+  border-color: #ab92f6;
+  box-shadow:
+    0 0 18px rgba(171, 146, 246, 0.4),
+    inset 0 0 12px rgba(171, 146, 246, 0.08);
+}
+
+.home-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(231, 255, 246, 0.05);
+}
+
+@media only screen and (max-width: 700px) {
+  .home-card {
+    padding: 42px 24px;
+  }
+
+  .home-logo-wrap {
+    width: 170px;
+    height: 170px;
+  }
+
+  .home-title {
+    font-size: 2.8rem;
+    letter-spacing: 0.28em;
+    text-indent: 0.28em;
+  }
+
+  .home-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .home-btn {
+    width: 100%;
+  }
+}

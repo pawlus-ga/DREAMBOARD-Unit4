@@ -1,0 +1,117 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/projects/project-detail.css' %}?v=2" />
+{% endblock %} 
+{% block content %}
+<section class="project-container">
+    <div class="project-details">
+        <h1> "{{ project.song_title }}" Music Video </h1>
+        <h2>Artist: {{ project.artist_name }}</h2>
+        <h3>{{ project.description }}</h3>
+        <h3>Genre: {{ project.genre }}</h3>
+        <h2>Shoot Starts: {{ project.shoot_date }}</h2>
+        <h3>Shoot Duration: {{ project.shoot_days }} days.</h3>
+        <h2>Project Status: {{ project.project_status }}</h2>
+        <h2>Payment Status: {{ project.payment_status }}</h2>
+        <h2>Deliverables Status: {{ project.deliverables_status }}</h2>
+        <h3>Social Media Content: {{ project.requires_social_content }}</h3>
+        <h3>Cover Art: {{ project.requires_cover_art }}</h3>
+        <h3>Photography: {{ project.requires_photography }}</h3>
+        
+        <div class="project-actions">
+            <a href="{% url 'project-update' project.id %}" class="btn warn">Edit</a>
+            <a href="{% url 'project-delete' project.id %}" class="btn danger">Delete</a>
+        </div>
+    </div>
+    <div class="project-img">
+        <img src="{% static '' %}" alt="Project Cover Art" />
+    </div>
+</section>
+
+<div class="scenes-equipment-container">
+    <section class="scenes">
+        <div class="subsection-title">
+            <h2>Scenes</h2>
+        </div>
+        Copy
+        <h3>Add a Scene</h3>
+        <form 
+        action="{% url 'add-scene' project.id %}"
+        method="post" 
+        class="subsection-content" autocomplete="off">
+            {% csrf_token %} 
+            {{ scene_form.as_p }}
+            <button type="submit" class="btn submit">Add Scene</button>
+        </form>
+        <h3>Past Scenes</h3>
+        {% if project.scene_set.all.count %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Scenes</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for scene in project.scene_set.all %}
+                        <tr>
+                            <td>{{scene.scene_title}}</td>
+                            <td>{{scene.location}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <div class="subsection-content">
+                <p> {{project.song_title}} has no scenes.</p>
+            </div>
+        {% endif %}
+    </section>
+
+    <section class="equipment">
+      <div class="subsection-title">
+        <h2>Equipment</h2>
+        <img src="{% static 'images/' %}" alt="" />
+      </div>
+
+      <h3>{{ project.song_title }}'s Equipment</h3>
+      <div class="subsection-content">
+        {% if project.equipment.count %} 
+          {% for equipment in project.equipment.all %}
+            <div class="equipment-container">
+              <a href="{% url 'equipment-detail' equipment.id %}">
+                <p>{{ equipment.name }} {{ equipment.category }}</p>
+              </a>
+            
+              <form action="{% url 'remove-equipment' project.id equipment.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn danger">Remove</button>
+              </form>
+
+            </div>
+          {% endfor %} 
+        {% else %}
+          <p class="no-equipment">{{project.song_title}} doesn't have any equipment listed!</p>
+        {% endif %}
+      </div>
+
+      <h3>Available Equipment</h3>
+      <div class="subsection-content">
+        {% for item in available_equipment %}
+          <div class="equipment-container">
+            <p>{{ item.name }} - {{ item.category }}</p>
+
+            <form action="{% url 'associate-equipment' project.id item.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn submit">Add Equipment</button>
+            </form>
+          </div>
+        {% empty %}
+          <p>{{ project.song_title }} is using all available equipment.</p>
+
+        {% endfor %}
+      </div>
+    </section>
+</div>
+{% endblock %}

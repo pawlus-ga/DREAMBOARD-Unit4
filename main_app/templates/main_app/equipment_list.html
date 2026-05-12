@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/equipment/equipment-index.css' %}?v=2" />
+{% endblock %}
+
+{% block content %}
+<section class="equipment-index-page">
+  <a href="{% url 'equipment-create' %}" class="add-equipment-btn">+New Equipment</a>
+
+  <div class="equipment-grid">
+    {% for equipment in equipment_list %}
+      <article class="equipment-card">
+        <div class="card-dots">...</div>
+
+        <div class="equipment-img-placeholder">
+          {% if equipment.category == 'camera' %}
+            <img src="{% static 'images/equipment/camera.png' %}" alt="Camera equipment">
+          {% elif equipment.category == 'lighting' %}
+            <img src="{% static 'images/equipment/lighting.png' %}" alt="Lighting equipment">
+          {% elif equipment.category == 'set_design' %}
+            <img src="{% static 'images/equipment/set_design.png' %}" alt="Set design equipment">
+          {% elif equipment.category == 'props' %}
+            <img src="{% static 'images/equipment/props.png' %}" alt="Props">
+          {% elif equipment.category == 'camera_accessory' %}
+            <img src="{% static 'images/equipment/camera_accessory.png' %}" alt="Camera accessory">
+          {% elif equipment.category == 'audio' %}
+            <img src="{% static 'images/equipment/audio.png' %}" alt="Audio equipment">
+          {% elif equipment.category == 'stabilization' %}
+            <img src="{% static 'images/equipment/stabilization.png' %}" alt="Stabilization equipment">
+          {% elif equipment.category == 'backdrop' %}
+            <img src="{% static 'images/equipment/backdrop.png' %}" alt="Backdrop equipment">
+          {% else %}
+            <img src="{% static 'images/equipment/other.png' %}" alt="Equipment">
+          {% endif %}
+        </div>
+
+        <h2>{{ equipment.name }}</h2>
+        <p>{{ equipment.get_category_display }}</p>
+
+        <a href="{% url 'equipment-detail' equipment.id %}" class="view-btn">View</a>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

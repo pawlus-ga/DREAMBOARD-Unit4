@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}?v=2" />
+{% endblock %}
+
+{% block content %}
+<section class="login-page">
+  <form action="{% url 'login' %}" method="post" class="login">
+    <h1>DREAMBOARD</h1>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="hidden" name="next" value="{{ next }}" />
+    <button type="submit" class="btn submit">Login</button>
+
+    <p class="signup-link">
+      No account?
+      <a href="{% url 'signup' %}">Sign up</a>
+    </p>
+  </form>
+</section>
+{% endblock %}

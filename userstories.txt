@@ -1,0 +1,86 @@
+MVP
+
+🔐 Authentication
+
+* AAU I want to create an account so that I can manage my own music video projects
+* AAU I want to log in and log out so that my data is secure
+* AAU I want to edit my profile details
+* AAU I want only my projects to be editable/deletable by me
+* AAU I want other users to not be able to modify my data
+
+
+🎬 Projects (CORE OF YOUR APP)
+
+* AAU I want to create a music video project with basic details (title, artist, description, shoot date)
+* AAU I want to view a list of all my projects
+* AAU I want to view the details of a single project
+* AAU I want to edit and delete my projects
+
+
+🎞 Scenes (THIS IS WHAT MAKES YOUR APP UNIQUE)
+
+* AAU I want to add scenes to a project
+* AAU I want each scene to include creative details (mood, location, camera movement, effects, notes)
+* AAU I want to edit scenes
+* AAU I want to delete scenes
+* AAU I want to view all scenes within a project
+
+
+🧩 Project Organization (LIGHT FILTERING – MVP SAFE)
+
+* AAU I want to filter projects by artist
+* AAU I want to sort projects by shoot date
+* AAU I want to filter projects by project status
+
+
+📊 Project Status Tracking (SIMPLIFIED VERSION OF YOUR IDEA)
+
+* AAU I want to assign a status to each project (pre-production, production, post-production, completed)
+* AAU I want to track payment status for each project
+* AAU I want to track deliverable status
+
+
+🔔 Deadlines / Reminders
+
+* AAU I want to set deadlines for scenes or projects
+
+
+
+
+
+STRETCH GOALS
+
+* AAU I want a system that dynamically calculates the estimated cost of a project based on production variables like shoot duration, editing complexity, additional deliverables, and production requirements
+
+🗓 Calendar System
+
+* AAU I want to view a timeline/calendar of my project phases
+
+
+🖼 Media Upload System
+
+* AAU I want to upload and store video/photo assets for each project
+
+
+🧠 Scene Tags / FX System
+
+* AAU I want to tag scenes with effects (fire, smoke, water) and filter by them
+
+
+🎨 Visual Mood Board
+
+* AAU I want to attach reference images to scenes
+
+
+📈 Dashboard Analytics
+
+* AAU I want to see stats like:
+    * number of active projects
+    * completed projects
+    * upcoming shoots
+
+
+🌐 Public Sharing / Forms
+
+* AAU I want to share a project via a public link
+* AAU I want a client-facing form where clients can submit their project details so that I can understand their requirements and generate an initial cost estimate.

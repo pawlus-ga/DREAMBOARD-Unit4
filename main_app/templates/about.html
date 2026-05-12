@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}?v=1" />
+{% endblock %}
+
+{% block content %}
+<section class="about-page">
+  <article class="about-card">
+    <h1 class="about-title">About Dreamboard</h1>
+    <div class="about-divider"></div>
+
+    <p>
+      <span>DREAMBOARD</span> is a production planning tool built for music video directors,
+      creatives, and visual teams who need a clean way to organize projects from concept
+      to completion.
+    </p>
+
+    <p>
+      Use it to track music video details, plan scenes, manage equipment, and keep each
+      production organized inside one cinematic workspace.
+    </p>
+
+    <div class="about-grid">
+      <div class="about-feature">
+        <h2>Projects</h2>
+        <p>Create and manage music video productions with artist details, shoot dates, statuses, and deliverables.</p>
+      </div>
+
+      <div class="about-feature">
+        <h2>Scenes</h2>
+        <p>Break each project into individual scenes with locations, moods, notes, and creative direction.</p>
+      </div>
+
+      <div class="about-feature">
+        <h2>Equipment</h2>
+        <p>Build an equipment vault and attach the right gear to each upcoming production.</p>
+      </div>
+    </div>
+  </article>
+</section>
+{% endblock %}

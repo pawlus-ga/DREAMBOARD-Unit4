@@ -1,0 +1,185 @@
+main {
+  max-width: none;
+  padding: 0;
+  background: #020707;
+  min-height: calc(100vh - 92px);
+  font-family: "Courier New", monospace;
+}
+
+.equipment-form-page {
+  padding: 48px 52px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 38px;
+  color: #1be9a4;
+  text-decoration: none;
+  font-size: 1.8rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.equipment-form-container {
+  width: min(1050px, 95vw);
+  padding: 42px 54px 34px;
+  border: 1px solid rgba(27, 233, 164, 0.65);
+  background: rgba(0, 5, 6, 0.92);
+  box-shadow:
+    0 0 24px rgba(27, 233, 164, 0.28),
+    inset 0 0 22px rgba(27, 233, 164, 0.08);
+}
+
+.equipment-form-title {
+  margin: 0 0 34px;
+  color: #1be9a4;
+  font-size: 2.6rem;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 0 16px rgba(27, 233, 164, 0.85);
+}
+
+.equipment-form-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.equipment-form-container tr {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  align-items: center;
+  gap: 26px;
+  margin-bottom: 18px;
+}
+
+.equipment-form-container th {
+  color: #e7fff6;
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.equipment-form-container td {
+  width: 100%;
+}
+
+.equipment-form-container input,
+.equipment-form-container textarea,
+.equipment-form-container select {
+  width: 100%;
+  min-height: 48px;
+  background: #020707;
+  border: 1px solid rgba(231, 255, 246, 0.24);
+  color: #e7fff6;
+  font-size: 1.7rem;
+  font-family: "Courier New", monospace;
+  letter-spacing: 0.08em;
+  padding: 10px 14px;
+  box-shadow: 0 0 14px rgba(27, 233, 164, 0.08);
+}
+
+.equipment-form-container textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.equipment-form-container input:focus,
+.equipment-form-container textarea:focus,
+.equipment-form-container select:focus {
+  outline: none;
+  border-color: #1be9a4;
+  box-shadow: 0 0 18px rgba(27, 233, 164, 0.35);
+}
+
+.equipment-form-container select {
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #1be9a4 50%),
+    linear-gradient(135deg, #1be9a4 50%, transparent 50%);
+  background-position:
+    calc(100% - 24px) 20px,
+    calc(100% - 16px) 20px;
+  background-size: 8px 8px, 8px 8px;
+  background-repeat: no-repeat;
+}
+
+.equipment-form-container input[type="checkbox"] {
+  width: 28px;
+  height: 28px;
+  min-height: auto;
+  accent-color: #1be9a4;
+  box-shadow: none;
+}
+
+.equipment-form-container .helptext {
+  display: block;
+  margin-top: 8px;
+  color: rgba(231, 255, 246, 0.45);
+  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+}
+
+.equipment-form-container ul.errorlist {
+  margin: 0 0 8px;
+  padding: 0;
+  list-style: none;
+  color: #f76641;
+  font-size: 1.4rem;
+  letter-spacing: 0.08em;
+}
+
+.equipment-form-actions {
+  margin-top: 30px;
+}
+
+.equipment-form-container .btn,
+.equipment-form-container button[type="submit"] {
+  width: 100%;
+  height: 58px;
+  border: 1px solid #1be9a4;
+  background: transparent;
+  color: #1be9a4;
+  font-size: 2.2rem;
+  font-family: "Courier New", monospace;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  box-shadow:
+    0 0 18px rgba(27, 233, 164, 0.3),
+    inset 0 0 12px rgba(27, 233, 164, 0.08);
+}
+
+.equipment-form-container .btn:hover,
+.equipment-form-container button[type="submit"]:hover {
+  background: rgba(27, 233, 164, 0.08);
+  box-shadow: 0 0 26px rgba(27, 233, 164, 0.45);
+}
+
+@media only screen and (max-width: 800px) {
+  .equipment-form-page {
+    padding: 32px 22px;
+  }
+
+  .equipment-form-container {
+    padding: 32px 22px;
+  }
+
+  .equipment-form-container tr {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .equipment-form-container th {
+    font-size: 1.5rem;
+  }
+
+  .equipment-form-title {
+    font-size: 2rem;
+    letter-spacing: 0.24em;
+  }
+}

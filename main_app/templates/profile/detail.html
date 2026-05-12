@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/profile/profile-detail.css' %}?v=1" />
+{% endblock %}
+
+{% block content %}
+<section class="profile-detail-page">
+  <article class="profile-card">
+    <div class="profile-header">
+      <div class="profile-avatar">
+        {% if profile.display_name %}
+          {{ profile.display_name|slice:":2"|upper }}
+        {% else %}
+          {{ user.username|slice:":2"|upper }}
+        {% endif %}
+      </div>
+
+      <div class="profile-title-block">
+        <h1 class="profile-title">
+          {% if profile.display_name %}
+            {{ profile.display_name }}
+          {% else %}
+            {{ user.username }}
+          {% endif %}
+        </h1>
+
+        <p class="profile-subtitle">
+          {% if profile.business_name %}
+            {{ profile.business_name }}
+          {% else %}
+            Director Profile
+          {% endif %}
+        </p>
+      </div>
+    </div>
+
+    <div class="profile-divider"></div>
+
+    <div class="profile-info-grid">
+      <div class="profile-info-card">
+        <span class="profile-label">Username</span>
+        <p class="profile-value">{{ user.username }}</p>
+      </div>
+
+      <div class="profile-info-card">
+        <span class="profile-label">Email</span>
+        <p class="profile-value">
+          {% if profile.email %}
+            {{ profile.email }}
+          {% else %}
+            <span class="profile-empty">No email added</span>
+          {% endif %}
+        </p>
+      </div>
+
+      <div class="profile-info-card">
+        <span class="profile-label">Location</span>
+        <p class="profile-value">
+          {% if profile.location %}
+            {{ profile.location }}
+          {% else %}
+            <span class="profile-empty">No location added</span>
+          {% endif %}
+        </p>
+      </div>
+
+      <div class="profile-info-card">
+        <span class="profile-label">Role</span>
+        <p class="profile-value">
+          {% if profile.role %}
+            {{ profile.role }}
+          {% else %}
+            <span class="profile-empty">No role added</span>
+          {% endif %}
+        </p>
+      </div>
+
+      <div class="profile-info-card">
+        <span class="profile-label">Website</span>
+        <p class="profile-value">
+          {% if profile.website %}
+            {{ profile.website }}
+          {% else %}
+            <span class="profile-empty">No website added</span>
+          {% endif %}
+        </p>
+      </div>
+
+
+      <div class="profile-info-card full-width">
+        <span class="profile-label">Services Offered</span>
+        <p class="profile-value">
+          {% if profile.services_offered %}
+            {{ profile.services_offered }}
+          {% else %}
+            <span class="profile-empty">No services added</span>
+          {% endif %}
+        </p>
+      </div>
+    </div>
+
+    <div class="profile-actions">
+      <a href="{% url 'profile-update' %}" class="profile-btn edit">Edit Profile</a>
+      <a href="{% url 'profile-delete' %}" class="profile-btn delete">Delete Account</a>
+      <a href="{% url 'project-index' %}" class="profile-btn back">Back to Projects</a>
+    </div>
+  </article>
+</section>
+{% endblock %}

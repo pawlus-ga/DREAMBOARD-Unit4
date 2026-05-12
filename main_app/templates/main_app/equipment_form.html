@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/equipment/equipment-form.css' %}?v=1" />
+{% endblock %}
+
+{% block content %}
+<section class="equipment-form-page">
+  <a href="{% url 'equipment-index' %}" class="back-link">← Back</a>
+
+  <form action="" method="post" class="equipment-form-container">
+    {% csrf_token %}
+
+    {% if equipment %}
+      <h1 class="equipment-form-title">Edit Equipment</h1>
+    {% else %}
+      <h1 class="equipment-form-title">Add Equipment</h1>
+    {% endif %}
+
+    <table>
+      {{ form.as_table }}
+    </table>
+
+    <div class="equipment-form-actions">
+      <button type="submit" class="btn submit">Save</button>
+    </div>
+  </form>
+</section>
+{% endblock %}

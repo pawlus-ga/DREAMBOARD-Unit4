@@ -1,0 +1,17 @@
+{% extends 'base.html' %}  
+{% load static %} 
+{% block content %}
+
+<div class="page-header">
+  <h1>Delete "{{ project.song_title }}" by {{ project.artist_name }}?</h1>
+</div>
+
+<h2>Are you sure you want to delete {{ project.song_title }} by {{ project.artist_name }}?</h2>
+
+<form action="" method="post" class="form">
+  {% csrf_token %}
+  <a href="{% url 'project-detail' project.id %}" class="btn secondary">Cancel</a>
+  <button type="submit" class="btn danger">Yes - Delete!</button>
+</form> 
+
+{% endblock %}

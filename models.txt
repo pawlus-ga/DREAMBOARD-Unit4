@@ -1,0 +1,81 @@
+MVP Models
+
+    -user
+    -projects
+    -scenes
+    -effects
+
+reltionship types:
+    user to project: 
+        one to many
+
+    project to scenes:
+        one to many
+
+    scenes to effects:
+        many to many
+
+
+MVP Model Details:
+
+    User
+        - id
+        - username
+        - email
+        - password
+        - confirmpassword
+
+    Project
+        - id
+        - user_id
+        - title
+        - artist_name
+        - song_title
+        - description
+        - genre
+        - shoot_date
+        - shoot_days
+        - project_status
+        - payment_status
+        - deliverables_status
+        - requires_social_content
+        - requires_cover_art
+        - requires_photography
+        - requires_studio_rental
+        - requires_equipment_rental
+        - created_at
+        - updated_at
+
+    Scene
+        - id
+        - project_id
+        - title
+        - location
+        - mood
+        - camera_movement
+        - effects
+        - lighting
+        - wardrobe
+        - notes
+        - image_url
+        - created_at
+        - updated_at
+
+    Effects
+        - id
+        - name
+        - description
+        - created_at
+
+Stretch Models
+
+    -clientinquiry
+    -BudgetEstimate
+
+Stretch Model relationships:
+    clientinquiry to project
+        one to one
+    
+    project to BudgetEstimate
+        one to one
+

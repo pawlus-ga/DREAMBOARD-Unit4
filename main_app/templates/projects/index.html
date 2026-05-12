@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/projects/project-index.css' %}" />
+{% endblock %}
+
+{% block content %}
+<section class="project-index-page">
+  <a href="{% url 'project-create' %}" class="add-project-btn">+New Project</a>
+
+  {% for project in projects %}
+    <article class="project-card {% if project.project_status == 'post-production' %}post-production{% endif %}">
+      <div class="cover-placeholder">
+        Cover<br />Art
+      </div>
+
+      <div class="project-info">
+        <h2>"{{ project.song_title }}"</h2>
+        <h3><span>Artist:</span> {{ project.artist_name }}</h3>
+
+        <div class="status-pill {% if project.project_status == 'post-production' %}post-production{% endif %}">
+          {{ project.project_status }}
+        </div>
+
+        <p><span>Shoot Date:</span> {{ project.shoot_date|date:"m/d/y" }}</p>
+      </div>
+
+      <a href="{% url 'project-detail' project.id %}" class="view-btn">View</a>
+
+      <div class="card-dots">...</div>
+    </article>
+  {% endfor %}
+</section>
+{% endblock %}

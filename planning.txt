@@ -1,0 +1,90 @@
+A Django app where users can plan cinematic music video scenes by creating Projects, then adding Scenes with moods, FX, camera movement, locations, and notes.
+
+Core structure:
+
+User
+→ owns Projects
+→ each Project has many Scenes
+
+Example:
+
+Project: “Autopilot Music Video”
+Scenes:
+
+* Garage scene — chest fire, slow dolly push
+* White studio scene — asleep with music gear, water flooding
+* Forest scene — fog, disintegration, handheld tracking shot
+
+This is honestly a great final project because it gives you:
+
+Full CRUD ✅
+User ownership ✅
+One-to-many relationships ✅
+Strong theme ✅
+Portfolio relevance ✅
+Easy presentation story ✅
+
+For MVP, I’d build it like this:
+
+Models
+
+Project
+
+Fields:
+
+* title
+* description
+* genre
+* visual_style
+* created_at
+* user
+
+Scene
+
+Fields:
+
+* project
+* title
+* location
+* mood
+* camera_movement
+* effects
+* wardrobe
+* lighting
+* notes
+* image_url optional
+* created_at
+
+That’s enough to be “detailed” without becoming a monster.
+
+Pages
+
+* Home page
+* Sign up / Log in
+* Projects index: “My Projects”
+* Project detail page: shows project info + all scenes
+* Create project
+* Edit project
+* Delete project
+* Create scene inside a project
+* Edit scene
+* Delete scene
+* About page maybe
+
+UI Theme
+
+I’d make it feel like a dark cinematic production dashboard:
+
+* black / charcoal background
+* off-white text
+* muted gold or red accent
+* cards for each project
+* scene cards with tags like Fire FX, Slow Zoom, Dreamlike, Fog
+
+Simple App Description
+
+You can use this later in your README:
+
+SceneForge is a cinematic planning tool for music video directors and visual creators. Users can create video projects, organize scene concepts, and document key creative details such as mood, location, camera movement, lighting, wardrobe, and visual effects.
+
+This is 100% approved-project worthy. It’s basically your Notion scene bank, but as a Django CRUD app.

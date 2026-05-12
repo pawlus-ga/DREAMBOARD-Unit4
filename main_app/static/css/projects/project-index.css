@@ -1,0 +1,166 @@
+main {
+  max-width: none;
+  padding: 0;
+  background: #020707;
+  min-height: calc(100vh - 92px);
+  font-family: "Courier New", monospace;
+}
+
+.project-index-page {
+  padding: 48px 52px;
+}
+
+.add-project-btn {
+  display: inline-block;
+  margin-bottom: 46px;
+  padding: 22px 42px;
+  border: 1px solid #1be9a4;
+  color: #1be9a4;
+  text-decoration: none;
+  font-size: 2.4rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  box-shadow:
+    0 0 18px rgba(27, 233, 164, 0.45),
+    inset 0 0 14px rgba(27, 233, 164, 0.12);
+}
+
+.add-project-btn:hover {
+  background: rgba(27, 233, 164, 0.08);
+}
+
+.project-card {
+  width: 100%;
+  min-height: 280px;
+  margin-bottom: 34px;
+  padding: 28px 36px;
+  display: grid;
+  grid-template-columns: 270px 1fr 160px;
+  gap: 36px;
+  align-items: center;
+  border: 1px solid rgba(27, 233, 164, 0.65);
+  box-shadow:
+    0 0 20px rgba(27, 233, 164, 0.35),
+    inset 0 0 18px rgba(27, 233, 164, 0.06);
+  position: relative;
+}
+
+.project-card.post-production {
+  border-color: rgba(247, 102, 65, 0.7);
+  box-shadow:
+    0 0 20px rgba(247, 102, 65, 0.32),
+    inset 0 0 18px rgba(247, 102, 65, 0.06);
+}
+
+.cover-placeholder {
+  width: 250px;
+  height: 250px;
+  border: 1px solid rgba(231, 255, 246, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(231, 255, 246, 0.28);
+  font-size: 2.8rem;
+  letter-spacing: 0.28em;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.4;
+  box-shadow: 0 0 14px rgba(231, 255, 246, 0.08);
+}
+
+.project-info h2 {
+  margin: 0 0 24px;
+  color: #e7fff6;
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.project-info h3 {
+  margin: 0 0 24px;
+  color: #e7fff6;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+.project-info h3 span,
+.project-info p span {
+  color: #82a8e0;
+}
+
+.status-pill {
+  display: inline-block;
+  margin-bottom: 22px;
+  padding: 14px 18px;
+  border: 1px solid #1be9a4;
+  color: #1be9a4;
+  font-size: 1.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  box-shadow:
+    0 0 14px rgba(27, 233, 164, 0.4),
+    inset 0 0 10px rgba(27, 233, 164, 0.08);
+}
+
+.status-pill.post-production {
+  border-color: #f76641;
+  color: #f76641;
+  box-shadow:
+    0 0 14px rgba(247, 102, 65, 0.4),
+    inset 0 0 10px rgba(247, 102, 65, 0.08);
+}
+
+.project-info p {
+  margin: 0;
+  color: #e7fff6;
+  font-size: 1.9rem;
+  letter-spacing: 0.18em;
+}
+
+.view-btn {
+  justify-self: end;
+  padding: 16px 28px;
+  border: 1px solid #ab92f6;
+  color: #d8c7ff;
+  text-decoration: none;
+  font-size: 2rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  box-shadow:
+    0 0 16px rgba(171, 146, 246, 0.45),
+    inset 0 0 10px rgba(171, 146, 246, 0.08);
+}
+
+.view-btn:hover {
+  background: rgba(171, 146, 246, 0.08);
+}
+
+.card-dots {
+  position: absolute;
+  right: 34px;
+  top: 28px;
+  color: #1be9a4;
+  font-size: 2.8rem;
+  letter-spacing: 0.12em;
+}
+
+@media only screen and (max-width: 900px) {
+  .project-index-page {
+    padding: 28px 18px;
+  }
+
+  .project-card {
+    grid-template-columns: 1fr;
+  }
+
+  .cover-placeholder {
+    width: 100%;
+  }
+
+  .view-btn {
+    justify-self: start;
+  }
+}
