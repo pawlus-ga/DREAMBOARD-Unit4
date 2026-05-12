@@ -109,7 +109,7 @@ def add_scene(request, project_id):
 
 class EquipmentCreate(LoginRequiredMixin, CreateView):
     model = Equipment
-    fields = '__all__'
+    fields = ['name', 'category', 'description', 'owned', 'rental_required', 'notes']
 
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -130,7 +130,7 @@ class EquipmentDetail(LoginRequiredMixin, DetailView):
 
 class EquipmentUpdate(LoginRequiredMixin, UpdateView):
     model = Equipment
-    fields = '__all__'
+    fields = ['name', 'category', 'description', 'owned', 'rental_required', 'notes']
 
     def get_queryset(self):
         return Equipment.objects.filter(user=self.request.user)
