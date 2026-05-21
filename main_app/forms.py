@@ -10,6 +10,7 @@ class ProjectForm(forms.ModelForm):
         fields = [
             'artist_name',
             'song_title',
+            'cover_art',
             'description',
             'genre',
             'shoot_date',

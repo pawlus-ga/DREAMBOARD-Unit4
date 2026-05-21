@@ -12,7 +12,11 @@
   {% for project in projects %}
     <article class="project-card {% if project.project_status == 'post-production' %}post-production{% endif %}">
       <div class="cover-placeholder">
-        Cover<br />Art
+        {% if project.cover_art %}
+          <img src="{{ project.cover_art.url }}" alt="{{ project.song_title }} cover art">
+        {% else %}
+          Cover<br />Art
+        {% endif %}
       </div>
 
       <div class="project-info">

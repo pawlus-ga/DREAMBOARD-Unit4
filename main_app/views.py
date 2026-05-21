@@ -68,7 +68,7 @@ def project_index(request):
 
 @login_required
 def project_detail(request, project_id):
-    project = Project.objects.get(id=project_id)
+    project = Project.objects.get(id=project_id, user=request.user)
     scene_form = SceneForm()
 
     project_equipment = project.equipment.all()
@@ -94,9 +94,15 @@ class ProjectUpdate(LoginRequiredMixin, UpdateView):
     model = Project
     form_class = ProjectForm
 
+    def get_queryset(self):
+        return Project.objects.filter(user=self.request.user)
+
 class ProjectDelete(LoginRequiredMixin, DeleteView):
     model = Project
     success_url = '/projects/'
+
+    def get_queryset(self):
+        return Project.objects.filter(user=self.request.user)
 
 @login_required
 def add_scene(request, project_id):

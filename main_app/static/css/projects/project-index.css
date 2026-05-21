@@ -53,19 +53,13 @@ main {
 }
 
 .cover-placeholder {
-  width: 250px;
-  height: 250px;
-  border: 1px solid rgba(231, 255, 246, 0.25);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(231, 255, 246, 0.28);
-  font-size: 2.8rem;
-  letter-spacing: 0.28em;
-  text-align: center;
-  text-transform: uppercase;
-  line-height: 1.4;
-  box-shadow: 0 0 14px rgba(231, 255, 246, 0.08);
+  overflow: hidden;
+}
+
+.cover-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .project-info h2 {
@@ -146,6 +140,8 @@ main {
   font-size: 2.8rem;
   letter-spacing: 0.12em;
 }
+
+
 
 @media only screen and (max-width: 900px) {
   .project-index-page {

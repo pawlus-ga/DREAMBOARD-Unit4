@@ -25,7 +25,11 @@
         </div>
     </div>
     <div class="project-img">
-        <img src="{% static '' %}" alt="Project Cover Art" />
+      {% if project.cover_art %}
+        <img src="{{ project.cover_art.url }}" alt="{{ project.song_title }} cover art" />
+      {% else %}
+        <span>Cover Art</span>
+      {% endif %}
     </div>
 </section>
 

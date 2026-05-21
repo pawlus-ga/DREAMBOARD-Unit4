@@ -60,6 +60,7 @@ class Equipment(models.Model):
 class Project(models.Model):
     artist_name = models.CharField(max_length=150)
     song_title = models.CharField(max_length=150)
+    cover_art = models.ImageField(upload_to='project_cover_art/', blank=True, null=True)
     description = models.TextField(blank=True)
     genre = models.CharField(max_length=100, blank=True)
     shoot_date = models.DateField(blank=True, null=True)
